@@ -1,20 +1,20 @@
 import { Schema, models, model } from "mongoose";
 
-const PromptSchema = new Schema({
-  creators: {
+const promptSchema = new Schema({
+  creator: {
     type: Schema.Types.ObjectId,
     ref: "User",
   },
   prompt: {
     type: String,
-    required: [true, "Prompt is required ."],
+    required: [true, "Prompt is required."],
   },
   tag: {
     type: String,
-    required: [true, "Prompt is required ."],
+    required: [true, "Tag is required."],
   },
 });
 
-const Prompt = models.prompt || model("Prompt", PromptSchema);
+const Prompt = models.Prompt || model("Prompt", promptSchema);
 
 export default Prompt;
